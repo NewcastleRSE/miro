@@ -8,10 +8,11 @@
         extensionPoints: {
           bottomBar: {
             title: 'Dice',
-           // svgIcon: '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/>',
-			svgIcon: ' <rect x="12" y="12" width="12" height="12" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/>',
+			svgIcon: '   <rect x="10" y="10" rx="2" ry="2" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" />',
             onClick: () => {
-              alert('Hi, I\'m a web-plugin!')
+			
+			  var value = Math.floor(Math.random() * 6) + 1 ;
+              alert('Your number is ' + value);
             }
           }
         }
