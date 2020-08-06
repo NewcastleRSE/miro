@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get all widgets</title>
+
+  <script>
+    var data = null;
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === this.DONE) {
+        console.log(this.responseText);
+      }
+    });
+
+    xhr.open("GET", "https://api.miro.com/v1/boards/o9J_knjU_vU=/widgets/widgetId");
+    xhr.setRequestHeader("authorization", "Bearer 1cd6bccf-eecb-4b38-8950-a87491a58564");
+
+    xhr.send(data);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

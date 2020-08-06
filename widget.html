@@ -4,7 +4,7 @@
   <script type="text/javascript" src="https://miro.com/app/static/sdk.1.1.js"></script>
 </head>
 <body>
-<div id="box" style="background: red; width: 50px; height: 50px;"></div>
+<div id="box" style="background: red; width: 50px; height: 50px;">Copy me!</div>
 <script>
   async function createWidget(canvasX, canvasY) {
     const widget = (await miro.board.widgets.create({type: 'shape', x:canvasX || 0, y:canvasY || 0}))[0]
@@ -27,6 +27,8 @@
   miro.onReady(() => {
     miro.board.ui.initDraggableItemsContainer(document.body, options)
   })
+
+
 
 </script>
 </body>
