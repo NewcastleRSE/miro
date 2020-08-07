@@ -9,7 +9,6 @@
 
   async function createWidget(canvasX, canvasY) {
     const widget = (await miro.board.widgets.create({type: 'shape', x:canvasX || 0, y:canvasY || 0}))[0]
-    miro.board.viewport.zoomToObject(widget)
   }
 
   const options = {
@@ -31,7 +30,7 @@
     miro.initialize({
       extensionPoints: {
         bottomBar: {
-          title: 'Box Drag and drop',
+          title: 'Draggable Box',
           svgIcon: '   <rect x="2" y="2" rx="2" ry="2" width="18" height="18" fill="black" stroke="currentColor" stroke-width="2" />',
           onClick: async (targetElement) => {
             createWidget();
