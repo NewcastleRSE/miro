@@ -14,7 +14,7 @@
       let sticker = await miro.board.widgets.get({type: 'sticker'})
       console.log(sticker[0].id);
 
-      if(sticker !== null){
+      if(sticker[0].id !== null){
         console.log('Hide the sticker');
         await miro.board.widgets.deleteById(sticker[0].id);
       }
