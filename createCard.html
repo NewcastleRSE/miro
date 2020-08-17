@@ -11,6 +11,8 @@
 
     async function createWidget() {
 
+      console.log('In create widget');
+
       let sticker = await miro.board.widgets.get({type: 'sticker'})
       console.log(sticker[0].id);
 
