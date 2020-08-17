@@ -6,17 +6,46 @@
 
   <script>
 
+    async function createWidget() {
 
-        // Create sticker and card with tag 'Red tag'
-        let widgets = await miro.board.widgets.create([
-          {type: 'sticker', text: 'I am sticker'},
-          {type: 'card', title: 'I am card'},
-        ])
-        miro.board.tags.create({title: 'Red tag', color: '#F24726', widgetIds: widgets})
+      // Create sticker and card with tag 'Red tag'
+      let widgets = await miro.board.widgets.create([
+        {type: 'sticker', text: 'I am sticker'},
+        {type: 'card', title: 'I am card'},
+      ])
+      miro.board.tags.create({title: 'Red tag', color: '#F24726', widgetIds: widgets})
 
-       // And then find all widgets with tag 'Red tag'
-        let tags = await miro.board.tags.get({title: 'Red tag'})
-        console.log(tags[0].widgetIds);
+      // And then find all widgets with tag 'Red tag'
+      let tags = await miro.board.tags.get({title: 'Red tag'})
+      console.log(tags[0].widgetIds);
+    }
+
+    const options = {
+      draggableItemSelector: '#box',
+      onClick: async (targetElement) => {
+        createWidget()
+      },
+
+    }
+
+    miro.onReady(() => {
+      miro.board.ui.initDraggableItemsContainer(document.body, options);
+
+      miro.initialize({
+        extensionPoints: {
+          toolBar: {
+            title: 'Create card and sticker',
+            onClick: async (targetElement) => {
+              createWidget();
+            }
+          }
+        }
+      });
+
+    })
+
+
+
 
 
  </script>
