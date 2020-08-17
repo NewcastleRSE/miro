@@ -11,18 +11,19 @@
 
     async function createWidget() {
 
-      // Create sticker and card with tag 'Red tag'
-      let widgets = await miro.board.widgets.create([
-        {type: 'sticker', text: 'I am sticker'}
-      ])
-      miro.board.tags.create({title: 'Red tag', color: '#F24726', widgetIds: widgets})
+      let sticker = await miro.board.widgets.get({type: 'sticker'})
+      console.log(sticker);
 
-      // And then find all widgets with tag 'Red tag'
-      let tags = await miro.board.tags.get({title: 'Red tag'})
-      console.log(tags[0].widgetIds);
-
-      if(tags !== null){
+      if(sticker !== null){
         console.log('Hide the widget');
+        await miro.board.widgets.deleteById(sticker.id);
+      }
+      else {
+        // Create sticker
+        await miro.board.widgets.create([
+          {type: 'sticker', text: 'I am sticker'}
+        ])
+
       }
     }
 
