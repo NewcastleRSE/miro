@@ -16,13 +16,15 @@
       let sticker = await miro.board.widgets.get({type: 'sticker'})
       console.log(sticker[0].id);
 
-      if(sticker[0].id !== null){
+      console.log(typeof(sticker));
+     
+      if(sticker !== null){
         console.log('Hide the sticker');
         await miro.board.widgets.deleteById(sticker[0].id);
       }
       else {
         console.log('Create the sticker');
-        // Create sticker
+        // always create sticker
         sticker = await miro.board.widgets.create([
           {type: 'sticker', text: 'I am sticker'}
         ])
