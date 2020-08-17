@@ -18,17 +18,17 @@
 
       console.log(typeof(sticker));
 
-      if(sticker !== null){
-        console.log('Hide the sticker');
-        await miro.board.widgets.deleteById(sticker[0].id);
-      }
-      else {
+      if(typeof(sticker) === 'undefined'){
+
         console.log('Create the sticker');
         // always create sticker
         let newsticker = await miro.board.widgets.create([
           {type: 'sticker', text: 'I am sticker'}
         ])
-
+      }
+      else {
+        console.log('Hide the sticker');
+        await miro.board.widgets.deleteById(sticker[0].id);
       }
     }
 
