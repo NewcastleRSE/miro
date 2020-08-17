@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>create card</title>
+
+  <script>
+
+
+        // Create sticker and card with tag 'Red tag'
+        let widgets = await miro.board.widgets.create([
+          {type: 'sticker', text: 'I am sticker'},
+          {type: 'card', title: 'I am card'},
+        ])
+        miro.board.tags.create({title: 'Red tag', color: '#F24726', widgetIds: widgets})
+
+       // And then find all widgets with tag 'Red tag'
+        let tags = await miro.board.tags.get({title: 'Red tag'})
+        console.log(tags[0].widgetIds);
+
+
+ </script>
+</head>
+<body>
+
+</body>
+</html>
