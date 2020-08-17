@@ -9,7 +9,7 @@
 
   <script>
 
-    async function hideShowWidget() {
+    async function createWidget() {
 
       // Create sticker and card with tag 'Red tag'
       let widgets = await miro.board.widgets.create([
@@ -29,7 +29,7 @@
     const options = {
       draggableItemSelector: '#box',
       onClick: async (targetElement) => {
-        hideShowWidget()
+        createWidget()
       },
 
     }
@@ -43,7 +43,7 @@
             title: 'Create sticker',
             svgIcon:  ' <rect x="2" y="2" rx="2" ry="2" width="18" height="18" fill="red" stroke="currentColor" stroke-width="2" />',
             onClick: async (targetElement) => {
-              hideShowWidget();
+              createWidget();
             }
           }
         }
