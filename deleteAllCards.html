@@ -3,7 +3,7 @@
 <head>
   <script type="text/javascript" src="https://miro.com/app/static/sdk.1.1.js"></script>
   <meta charset="UTF-8">
-  <title>create card</title>
+  <title>Delete all cards</title>
 
   <script>
 
@@ -32,8 +32,19 @@
           bottomBar: {
             title: 'Card Cleaner',
             svgIcon: icon,
+
             onClick: async () => {
-              clearAllCards()
+              const authorized = await miro.isAuthorized()
+              if (authorized) {
+                clearAllCards()
+              } else {
+                miro.board.ui.openModal('not-authorized.html')
+                  .then(res => {
+                    if (res === 'success') {
+                      clearAllCards()
+                    }
+                  })
+              }
             }
           }
         }
