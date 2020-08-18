@@ -12,7 +12,7 @@
     async function createWidget() {
 
       let card = await miro.board.widgets.create([
-        {type: 'card', text: 'I am a card'}
+        {type: 'card', title: 'I am a card'}
       ])
 
       /*let sticker = await miro.board.widgets.get({type: 'sticker'})
