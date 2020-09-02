@@ -1,6 +1,6 @@
 .sltheader {
   padding: 30px 0 30px 20px;
-  background-color: #eaeaea;
+  /*background-color: #eaeaea; */
   border: 1px solid #cccccc;
 }
 
@@ -19,6 +19,9 @@
 
 #di-logo {
   padding-bottom: 30px;
+  padding-right: 30px;
+  margin-top: -10px;
+  float:right;
 }
 
 .top-left{
