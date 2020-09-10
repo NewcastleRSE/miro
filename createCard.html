@@ -12,24 +12,6 @@
       let card = await miro.board.widgets.create([
         {type: 'card', title: 'I am a card'}
       ])
-
-      /*let sticker = await miro.board.widgets.get({type: 'sticker'})
-      console.log(sticker[0].id);
-
-      console.log(typeof(sticker));
-
-      if(typeof(sticker) === 'undefined'){
-
-        console.log('Create the sticker');
-        // always create sticker
-        let newsticker = await miro.board.widgets.create([
-          {type: 'sticker', text: 'I am sticker'}
-        ])
-      }
-      else {
-        console.log('Hide the sticker');
-        await miro.board.widgets.deleteById(sticker[0].id);
-      } */
     }
 
     const options = {
