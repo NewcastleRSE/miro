@@ -8,6 +8,13 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link rel="stylesheet" href="../css/slt-styles.css">
     <meta charset="UTF-8">
+  <script>
+    function newWindow(url,width,height) {
+      flags = "width=" + width + ",height=" + height + ",resizable=no,scrollbars=no,menubar=no,toolbar=no,status=no,location=no,alwaysraised=yes";
+      window.open(url, "mywindow", flags);
+    }</script>
+
+
 </head>
 <body>
 <section class="main-content columns is-fullheight">
@@ -20,7 +27,10 @@
         <p class="title is-4">Part 1 - Set up the online Zoom portal</p>
         <div class="box">
           <p>Set up an account with into Zoom at: <strong>https://zoom.us/</strong></p>
-          <p><img src="../img/zoom-portal.png"></p>
+         <!-- <p><img src="../img/zoom-portal.png"></p>-->
+          <a href="http://www.ebayhacks.com/pictures/front.jpg"
+             onClick="newWindow('../www.ebayhacks.com/pictures/view1.jpg', 300,225);return false;"><img
+            src="http://www.ebayhacks.com/pictures/front_small.jpg"></a>
         </div>
         <div class="box">
           <p>Sign into the account with your registered <strong>email</strong> and <strong>password</strong>.</p>
