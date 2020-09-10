@@ -28,7 +28,7 @@ async function showAndHide() {
 
   let sticker = await miro.board.widgets.get({type: 'sticker'})
 
-     if(typeof(sticker) === 'undefined'){
+     if(typeof(sticker[0].id) === 'undefined'){
 
        console.log('Create the sticker');
        // always create sticker
