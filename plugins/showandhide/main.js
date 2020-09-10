@@ -26,8 +26,8 @@ miro.onReady(() => {
 
 async function showAndHide() {
 
-  let sticker = await miro.board.widgets.get({type: 'sticker'})
-     if(sticker === undefined){
+  let stickers = await miro.board.widgets.get({type: 'sticker'})
+     if(stickers.length === 0){
 
        console.log('Create the sticker');
        // always create sticker
@@ -37,7 +37,7 @@ async function showAndHide() {
      }
      else {
        console.log('Hide the sticker');
-       await miro.board.widgets.deleteById(sticker[0].id);
+       await miro.board.widgets.deleteById(stickers[0].id);
      }
 
 }
