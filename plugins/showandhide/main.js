@@ -27,9 +27,6 @@ miro.onReady(() => {
 async function showAndHide() {
 
   let sticker = await miro.board.widgets.get({type: 'sticker'})
-     console.log(sticker[0].id);
-
-     console.log(typeof(sticker));
 
      if(typeof(sticker) === 'undefined'){
 
