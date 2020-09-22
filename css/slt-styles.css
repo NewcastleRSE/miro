@@ -54,3 +54,17 @@
 .img-section {
   padding: 30px;
 }
+
+.columns {
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+
+  .columns {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    margin-top: -2rem;
+  }
+
+}
